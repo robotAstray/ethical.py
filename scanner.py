@@ -16,9 +16,19 @@ args = parser.parse_args()
 
 host = args.host
 
+# Define socket family
+
+socket_family = socket.AF_INET
+
+# Define socket type
+
+socket_type = socket.SOCK_STREAM
+
 # Define network socket
 
-network_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+network_socket = socket.socket(socket_family, socket_type)
+#network_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 
 def portscanner(port):
         if network_socket.connect_ex((host,port)):
