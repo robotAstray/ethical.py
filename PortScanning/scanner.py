@@ -32,8 +32,8 @@ network_socket = socket.socket(socket_family, socket_type)
 
 def portscanner(port):
         if network_socket.connect_ex((host,port)):
-                print "Port %d is closed" % (port)
+                print("Port %d is closed" % (port))
         else: 
-                print "port %d is open" % (port)
+                print("port %d is open" % (port))
 
 portscanner(args.port)
