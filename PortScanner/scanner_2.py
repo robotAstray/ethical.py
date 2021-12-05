@@ -2,6 +2,7 @@
 
 import argparse
 import socket
+from termcolor import colored
 
 
 parser = argparse.ArgumentParser(description="Command Line Interface Port Scanner")
@@ -44,10 +45,10 @@ end = args.end
 
 def portscanner(port):
 	if network_socket.connect_ex((host, port)):
-		print("Port number %d is closed" % (port))
+		print(colored("Port number %d is closed" % (port), 'red'))
         
 	else: 
-		print("Port number %d is open" % (port))
+		print(colored("Port number %d is open" % (port), 'green'))
 		ports.append(port)
 
 if start  < end:
